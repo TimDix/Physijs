@@ -120,8 +120,14 @@
 			0, // mass
 			{ restitution: .2, friction: .8 }
 		);
-		table.position.y = -.5;
+		
+		position.y = -.5;
 		table.receiveShadow = true;
+		
+		table.addEventListener('collision', function( other_object ) {	
+			console.log('table collision', other_object); 
+		});
+		
 		scene.add( table );
 		
 		createTower();
